@@ -19,8 +19,8 @@ config/*.yaml
 venv/
 
 # Python cache
-__pycache__/
 *.pyc
+__pycache__/
 
 # 🔥 ADD THESE (IMPORTANT)
 logs/
