@@ -19,7 +19,6 @@ config/*.yaml
 venv/
 
 # Python cache
-__pycache__/
 *.pyc
 
 # 🔥 ADD THESE (IMPORTANT)
