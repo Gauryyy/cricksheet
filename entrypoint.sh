@@ -4,4 +4,4 @@ echo "Running ETL pipeline..."
 python src/main.py
 
 echo "Starting Flask app..."
-python -m web.app
+python web/app.py
