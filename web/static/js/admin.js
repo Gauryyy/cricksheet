@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initAdmin();
 });
 
@@ -202,6 +202,13 @@ function triggerETL() {
     if (!isDataUploaded) {
         alert('All is okay. (No new files uploaded for processing)');
         logInteraction('ADMIN_ETL_TRIGGER_SKIPPED', { reason: 'No new data' });
+        return;
+    }
+
+    // Add confirmation
+    const confirmRun = confirm("It will run automatically at 2 am with the uploaded data do you still want to continue.");
+    if (!confirmRun) {
+        logInteraction('ADMIN_ETL_TRIGGER_CANCELLED', { reason: 'User cancelled at confirmation' });
         return;
     }
 
