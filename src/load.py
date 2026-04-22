@@ -1,5 +1,7 @@
-import pandas as pd
 import os
+
+import pandas as pd
+
 
 def save_to_csv(matches, deliveries, player_stats, team_stats, match_summary, output_path, output_config, logger):
     os.makedirs(output_path, exist_ok=True)
@@ -7,25 +9,24 @@ def save_to_csv(matches, deliveries, player_stats, team_stats, match_summary, ou
     matches_df = pd.DataFrame(matches)
     deliveries_df = pd.DataFrame(deliveries)
 
-    # Save and log row counts
-    m_path = os.path.join(output_path, output_config.get("matches_file", "matches.csv"))
-    matches_df.to_csv(m_path, index=False)
-    logger.info(f"LOAD | FILE: {os.path.basename(m_path)} | ROWS: {len(matches_df)}")
+    matches_path = os.path.join(output_path, output_config.get("matches_file", "matches.csv"))
+    matches_df.to_csv(matches_path, index=False)
+    logger.info("LOAD | FILE: %s | ROWS: %s", os.path.basename(matches_path), len(matches_df))
 
-    d_path = os.path.join(output_path, output_config.get("deliveries_file", "deliveries.csv"))
-    deliveries_df.to_csv(d_path, index=False)
-    logger.info(f"LOAD | FILE: {os.path.basename(d_path)} | ROWS: {len(deliveries_df)}")
+    deliveries_path = os.path.join(output_path, output_config.get("deliveries_file", "deliveries.csv"))
+    deliveries_df.to_csv(deliveries_path, index=False)
+    logger.info("LOAD | FILE: %s | ROWS: %s", os.path.basename(deliveries_path), len(deliveries_df))
 
-    p_path = os.path.join(output_path, "player_stats.csv")
-    player_stats.to_csv(p_path, index=False)
-    logger.info(f"LOAD | FILE: player_stats.csv | ROWS: {len(player_stats)}")
+    player_stats_path = os.path.join(output_path, "player_stats.csv")
+    player_stats.to_csv(player_stats_path, index=False)
+    logger.info("LOAD | FILE: player_stats.csv | ROWS: %s", len(player_stats))
 
-    t_path = os.path.join(output_path, "team_stats.csv")
-    team_stats.to_csv(t_path, index=False)
-    logger.info(f"LOAD | FILE: team_stats.csv | ROWS: {len(team_stats)}")
+    team_stats_path = os.path.join(output_path, "team_stats.csv")
+    team_stats.to_csv(team_stats_path, index=False)
+    logger.info("LOAD | FILE: team_stats.csv | ROWS: %s", len(team_stats))
 
-    ms_path = os.path.join(output_path, "match_summary.csv")
-    match_summary.to_csv(ms_path, index=False)
-    logger.info(f"LOAD | FILE: match_summary.csv | ROWS: {len(match_summary)}")
+    match_summary_path = os.path.join(output_path, "match_summary.csv")
+    match_summary.to_csv(match_summary_path, index=False)
+    logger.info("LOAD | FILE: match_summary.csv | ROWS: %s", len(match_summary))
 
-    logger.info(f"LOAD | STATUS: Success | PATH: {output_path}")
+    logger.info("LOAD | STATUS: Success | PATH: %s", output_path)
