@@ -6,6 +6,12 @@ import logging
 import subprocess
 import json
 import sys
+from flask import session
+from src.auth.rbac import has_permission
+from src.auth.models import create_tables, seed_data
+from src.auth.auth_service import create_user
+from flask import session
+from src.auth.rbac import has_permission
 
 # Custom JSON Provider for Flask 3.x to handle NaN and NumPy types
 class CricketJSONProvider(DefaultJSONProvider):
@@ -24,6 +30,23 @@ class CricketJSONProvider(DefaultJSONProvider):
         return super().dumps(clean_obj(obj), **kwargs)
 
 app = Flask(__name__)
+
+app.secret_key = "secret123"  # needed for session
+
+create_tables()
+seed_data()
+
+# create test users
+create_user("admin_user", "1234", "admin")
+create_user("normal_user", "1234", "user")
+create_user("engineer_user", "1234", "engineer")
+
+@app.route("/login/<int:user_id>")
+def login(user_id):
+    session["user_id"] = user_id
+    return f"Logged in as user {user_id}"
+
+
 app.json = CricketJSONProvider(app)
 
 # Setup logging
@@ -86,7 +109,12 @@ def index():
 
 @app.route('/admin')
 def admin():
-    logger.info("Admin page accessed")
+    user_id = session.get("user_id")
+
+    if not user_id or not has_permission(user_id, "run_pipeline"):
+        return "Access Denied"
+
+    logger.info(f"Admin page accessed by user {user_id}")
     return render_template('admin.html')
 
 @app.route('/api/filter_options')
@@ -321,6 +349,14 @@ def admin_upload_file():
 
 @app.route('/api/admin/upload', methods=['POST'])
 def admin_trigger_etl():
+    # 🔐 RBAC CHECK (ADD THIS BLOCK)
+    user_id = session.get("user_id")
+
+    if not user_id or not has_permission(user_id, "run_pipeline"):
+        logger.warning(f"Unauthorized ETL attempt by user {user_id}")
+        return jsonify({'status': 'error', 'message': 'Access Denied'}), 403
+
+    # EXISTING CODE (KEEP SAME BELOW)
     # Check if there are new files to process
     new_data_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'new')
     has_new_files = os.path.exists(new_data_path) and len(os.listdir(new_data_path)) > 0
@@ -328,18 +364,32 @@ def admin_trigger_etl():
     if not has_new_files:
         return jsonify({'status': 'ok', 'message': 'All is okay. No new data to process.'})
 
-    logger.info("Admin triggered ETL pipeline execution...")
+    logger.info(f"User {user_id} triggered ETL pipeline execution...")
+
     try:
-        # Run the pipeline from the root directory
         root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-        result = subprocess.run([sys.executable, 'src/main.py'], cwd=root_dir, capture_output=True, text=True, check=True)
+        result = subprocess.run(
+            [sys.executable, 'src/main.py'],
+            cwd=root_dir,
+            capture_output=True,
+            text=True,
+            check=True
+        )
         
-        # After successful ETL, reload the global data
         load_data() 
-        return jsonify({'status': 'success', 'message': 'ETL Pipeline completed successfully', 'output': result.stdout})
+        return jsonify({
+            'status': 'success',
+            'message': 'ETL Pipeline completed successfully',
+            'output': result.stdout
+        })
+
     except subprocess.CalledProcessError as e:
         logger.error(f"ETL Pipeline failed: {e.stderr}")
-        return jsonify({'status': 'error', 'message': 'ETL Pipeline failed', 'error': e.stderr}), 500
+        return jsonify({
+            'status': 'error',
+            'message': 'ETL Pipeline failed',
+            'error': e.stderr
+        }), 500
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
