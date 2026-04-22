@@ -20,6 +20,7 @@ venv/
 
 # Python cache
 *.pyc
+__pycache__/
 
 # 🔥 ADD THESE (IMPORTANT)
 logs/
