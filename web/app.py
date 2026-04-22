@@ -6,6 +6,11 @@ import logging
 import subprocess
 import json
 import sys
+from cache import (
+    get_cached_response,
+    increment_dataset_version,
+    init_sqlite,
+)
 
 # Custom JSON Provider for Flask 3.x to handle NaN and NumPy types
 class CricketJSONProvider(DefaultJSONProvider):
@@ -69,6 +74,7 @@ def load_data():
         logger.error(f"Error loading data: {e}")
 
 load_data()
+init_sqlite()
 
 @app.route('/api/log_interaction', methods=['POST'])
 def log_interaction():
@@ -148,12 +154,7 @@ def apply_filters(df, filters):
         filtered_df = filtered_df[filtered_df['date'] <= filters['date_end']]
     return filtered_df
 
-@app.route('/api/dashboard_stats', methods=['POST'])
-def dashboard_stats():
-    filters = request.json or {}
-    ip = request.remote_addr
-    logger.info(f"API_REQUEST | IP: {ip} | ENDPOINT: /api/dashboard_stats | FILTERS: {json.dumps(filters)}")
-    
+def compute_dashboard_stats(filters):
     f_matches = apply_filters(matches_df, filters)
     match_ids = f_matches['match_id'].unique()
     
@@ -203,7 +204,7 @@ def dashboard_stats():
     if not recent_matches_df.empty and 'date' in recent_matches_df.columns:
         recent_matches_df['date'] = recent_matches_df['date'].dt.strftime('%Y-%m-%d')
 
-    return jsonify({
+    return {
         'kpis': {
             'total_matches': int(total_matches),
             'total_runs': int(total_runs),
@@ -221,11 +222,21 @@ def dashboard_stats():
             'centuries': centuries
         },
         'recent_matches': to_safe_list(recent_matches_df)
-    })
+    }
 
-@app.route('/api/charts/runs_distribution', methods=['POST'])
-def runs_distribution():
+@app.route('/api/dashboard_stats', methods=['POST'])
+def dashboard_stats():
     filters = request.json or {}
+    logger.info(f"API_REQUEST | endpoint=dashboard_stats | filters={json.dumps(filters, sort_keys=True)}")
+
+    result = get_cached_response(
+        endpoint="dashboard_stats",
+        filters=filters,
+        compute_fn=compute_dashboard_stats
+    )
+    return jsonify(result)
+
+def compute_runs_distribution(filters):
     f_matches = apply_filters(matches_df, filters)
     match_ids = f_matches['match_id'].unique()
     f_deliveries = merged_df[merged_df['match_id'].isin(match_ids)]
@@ -233,7 +244,7 @@ def runs_distribution():
     # Handle player-specific distribution
     if filters.get('player') and filters['player'] != 'All':
         opp_dist = f_deliveries.groupby('bowling_team')['runs_total'].sum().sort_values(ascending=False).head(5)
-        return jsonify(opp_dist.to_dict())
+        return opp_dist.to_dict()
 
     # Distribution by phases
     phases = {
@@ -241,25 +252,59 @@ def runs_distribution():
         'Middle (6-15)': int(f_deliveries[(f_deliveries['over'] >= 6) & (f_deliveries['over'] < 15)]['runs_total'].sum()),
         'Death (15-20)': int(f_deliveries[f_deliveries['over'] >= 15]['runs_total'].sum())
     }
-    return jsonify(phases)
+    return phases
 
-@app.route('/api/charts/player_trends', methods=['POST'])
-def player_trends():
+@app.route('/api/charts/runs_distribution', methods=['POST'])
+def runs_distribution():
     filters = request.json or {}
+    logger.info(f"API_REQUEST | endpoint=charts_runs_distribution | filters={json.dumps(filters, sort_keys=True)}")
+    result = get_cached_response(
+        endpoint="charts_runs_distribution",
+        filters=filters,
+        compute_fn=compute_runs_distribution
+    )
+    return jsonify(result)
+
+def compute_player_trends(filters):
     player = filters.get('player')
     if not player or player == 'All':
         if not merged_df.empty:
             player = merged_df.groupby('batter')['runs_total'].sum().idxmax()
         else:
-            return jsonify({'player': 'N/A', 'dates': [], 'runs': []})
+            return {'player': 'N/A', 'dates': [], 'runs': []}
     
     player_data = merged_df[merged_df['batter'] == player].sort_values('date')
     trends = player_data.groupby('date')['runs_total'].sum().reset_index()
-    return jsonify({
+    return {
         'player': player,
         'dates': [d.strftime('%Y-%m-%d') if hasattr(d, 'strftime') else str(d) for d in trends['date'].tolist()],
         'runs': [int(r) for r in trends['runs_total'].tolist()]
-    })
+    }
+
+PRELOAD_FILTERS = [
+    {},
+    {"team_a": "India"},
+    {"player": "All"}
+]
+
+def preload_cache():
+    for filters in PRELOAD_FILTERS:
+        get_cached_response(
+            "dashboard_stats",
+            filters,
+            compute_dashboard_stats
+        )
+
+@app.route('/api/charts/player_trends', methods=['POST'])
+def player_trends():
+    filters = request.json or {}
+    logger.info(f"API_REQUEST | endpoint=charts_player_trends | filters={json.dumps(filters, sort_keys=True)}")
+    result = get_cached_response(
+        endpoint="charts_player_trends",
+        filters=filters,
+        compute_fn=compute_player_trends
+    )
+    return jsonify(result)
 
 # Admin Endpoints
 @app.route('/api/admin/users')
@@ -335,7 +380,9 @@ def admin_trigger_etl():
         result = subprocess.run([sys.executable, 'src/main.py'], cwd=root_dir, capture_output=True, text=True, check=True)
         
         # After successful ETL, reload the global data
-        load_data() 
+        load_data()
+        increment_dataset_version()
+        preload_cache()
         return jsonify({'status': 'success', 'message': 'ETL Pipeline completed successfully', 'output': result.stdout})
     except subprocess.CalledProcessError as e:
         logger.error(f"ETL Pipeline failed: {e.stderr}")
