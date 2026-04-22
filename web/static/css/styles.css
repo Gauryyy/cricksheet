@@ -1,15 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
     color: #333;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 h1 {
@@ -27,7 +20,7 @@ h3 {
     color: #2980b9;
 }
 
-select, button, input {
+select, button {
     padding: 8px;
     margin: 5px;
     border: 1px solid #ccc;
