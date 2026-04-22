@@ -17,5 +17,12 @@ config/*.yaml
 
 # Python virtual environment
 venv/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# 🔥 ADD THESE (IMPORTANT)
+logs/
+rbac.db
+data/processed/
