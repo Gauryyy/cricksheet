@@ -1,0 +1,274 @@
+2026-04-20 19:36:36,003 - INFO - ETL pipeline started
+2026-04-20 19:36:36,004 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-20 19:36:36,086 - INFO - Extraction complete
+2026-04-20 19:36:36,088 - INFO - Processing 102 files
+2026-04-20 19:36:36,259 - INFO - Transformation complete
+2026-04-20 19:36:36,453 - INFO - Data saved successfully
+2026-04-20 19:36:36,456 - INFO - ETL pipeline finished
+2026-04-21 01:52:35,073 - INFO - ETL pipeline started
+2026-04-21 01:52:35,074 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 01:52:35,299 - INFO - Extraction complete
+2026-04-21 01:52:35,300 - INFO - Processing 102 files
+2026-04-21 01:52:35,495 - INFO - Transformation complete
+2026-04-21 01:52:35,696 - INFO - Data saved successfully
+2026-04-21 01:52:35,699 - INFO - ETL pipeline finished
+2026-04-21 17:06:06,033 - INFO - ETL pipeline started
+2026-04-21 17:06:06,033 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 17:06:06,077 - INFO - Extraction complete
+2026-04-21 17:06:06,078 - INFO - Processing 102 files
+2026-04-21 17:06:06,181 - INFO - Transformation complete
+2026-04-21 17:06:06,355 - INFO - Data saved successfully
+2026-04-21 17:06:06,357 - INFO - ETL pipeline finished
+2026-04-21 21:32:27,680 - INFO - ETL pipeline started
+2026-04-21 21:32:27,681 - INFO - Extracting ../data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 21:32:44,906 - INFO - ETL pipeline started
+2026-04-21 21:32:44,907 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 21:32:44,982 - INFO - Extraction complete
+2026-04-21 21:32:44,983 - INFO - Processing 102 files
+2026-04-21 21:32:45,187 - INFO - Transformation complete
+2026-04-21 21:32:46,913 - INFO - Derived tables calculated
+2026-04-21 21:32:47,122 - INFO - Data saved successfully to data/processed
+2026-04-21 21:32:47,125 - INFO - ETL pipeline finished
+2026-04-21 22:58:09,685 - INFO - ETL pipeline started
+2026-04-21 22:58:09,686 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 22:58:09,946 - INFO - Extraction complete
+2026-04-21 22:58:09,947 - INFO - Processing 102 files
+2026-04-21 22:58:10,147 - INFO - Transformation complete
+2026-04-21 22:58:14,382 - INFO - Derived tables calculated
+2026-04-21 22:58:14,687 - INFO - Data saved successfully to data/processed
+2026-04-21 22:58:14,697 - INFO - ETL pipeline finished
+2026-04-21 22:59:34,637 - INFO - ETL pipeline started
+2026-04-21 22:59:34,637 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 22:59:34,867 - INFO - Extraction complete
+2026-04-21 22:59:34,868 - INFO - Processing 102 files
+2026-04-21 22:59:35,009 - INFO - Transformation complete
+2026-04-21 22:59:39,129 - INFO - Derived tables calculated
+2026-04-21 22:59:39,665 - INFO - Data saved successfully to data/processed
+2026-04-21 22:59:39,673 - INFO - ETL pipeline finished
+2026-04-21 23:02:48,663 - INFO - ETL pipeline started
+2026-04-21 23:02:48,663 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 23:02:48,742 - INFO - Extraction complete
+2026-04-21 23:02:48,743 - INFO - Processing 102 files
+2026-04-21 23:02:48,836 - INFO - Transformation complete
+2026-04-21 23:02:49,784 - INFO - Derived tables calculated
+2026-04-21 23:02:49,924 - INFO - Data saved successfully to data/processed
+2026-04-21 23:02:49,927 - INFO - ETL pipeline finished
+2026-04-21 23:04:48,719 - INFO - ETL pipeline started
+2026-04-21 23:04:48,720 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 23:04:49,038 - INFO - Extraction complete
+2026-04-21 23:04:49,040 - INFO - Processing 102 files
+2026-04-21 23:04:49,314 - INFO - Transformation complete
+2026-04-21 23:04:51,504 - INFO - Derived tables calculated
+2026-04-21 23:04:51,757 - INFO - Data saved successfully to data/processed
+2026-04-21 23:04:51,762 - INFO - ETL pipeline finished
+2026-04-21 23:25:53,603 - INFO - ETL pipeline started
+2026-04-21 23:25:53,604 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-21 23:25:53,949 - INFO - Extraction complete
+2026-04-21 23:25:53,951 - INFO - Processing 102 files
+2026-04-21 23:25:54,217 - INFO - Transformation complete
+2026-04-21 23:25:56,972 - INFO - Derived tables calculated
+2026-04-21 23:25:57,268 - INFO - Data saved successfully to data/processed
+2026-04-21 23:25:57,277 - INFO - ETL pipeline finished
+2026-04-22 01:52:22,147 - INFO - ETL pipeline started
+2026-04-22 01:52:22,147 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 01:52:22,507 - INFO - Extraction complete
+2026-04-22 01:52:22,512 - INFO - Processing 107 files
+2026-04-22 01:52:22,945 - INFO - Transformation complete
+2026-04-22 01:52:28,695 - INFO - Derived tables calculated
+2026-04-22 01:52:29,537 - INFO - Data saved successfully to data/processed
+2026-04-22 01:52:29,547 - INFO - ETL pipeline finished
+2026-04-22 02:00:02,249 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 02:00:02,249 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 02:00:02,249 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 02:00:02,249 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 02:00:02,412 - INFO - Extraction complete
+2026-04-22 02:00:02,413 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 02:00:02,413 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 02:00:02,414 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 102
+2026-04-22 02:00:02,414 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 5
+2026-04-22 02:00:02,414 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 107
+2026-04-22 02:00:02,573 - INFO - Transformation complete
+2026-04-22 02:00:04,152 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 02:00:04,152 - INFO - TRANSFORM | STATS | Players: 254 | Teams: 9 | Match Summaries: 107
+2026-04-22 02:00:04,162 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 107 matches, 55130 deliveries
+2026-04-22 02:00:04,162 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 02:00:04,263 - INFO - LOAD | FILE: matches.csv | ROWS: 107
+2026-04-22 02:00:04,460 - INFO - LOAD | FILE: deliveries.csv | ROWS: 55130
+2026-04-22 02:00:04,464 - INFO - LOAD | FILE: player_stats.csv | ROWS: 254
+2026-04-22 02:00:04,466 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 02:00:04,468 - INFO - LOAD | FILE: match_summary.csv | ROWS: 107
+2026-04-22 02:00:04,468 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 02:00:04,472 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 02:00:04,472 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 02:59:35,130 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 02:59:35,130 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 02:59:35,130 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 02:59:35,131 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 02:59:35,228 - INFO - Extraction complete
+2026-04-22 02:59:35,228 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 02:59:35,228 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 02:59:35,229 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 102
+2026-04-22 02:59:35,229 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 5
+2026-04-22 02:59:35,229 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 107
+2026-04-22 02:59:35,346 - INFO - Transformation complete
+2026-04-22 02:59:36,396 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 02:59:36,397 - INFO - TRANSFORM | STATS | Players: 254 | Teams: 9 | Match Summaries: 107
+2026-04-22 02:59:36,403 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 107 matches, 55130 deliveries
+2026-04-22 02:59:36,403 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 02:59:36,484 - INFO - LOAD | FILE: matches.csv | ROWS: 107
+2026-04-22 02:59:36,561 - INFO - LOAD | FILE: deliveries.csv | ROWS: 55130
+2026-04-22 02:59:36,562 - INFO - LOAD | FILE: player_stats.csv | ROWS: 254
+2026-04-22 02:59:36,564 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 02:59:36,565 - INFO - LOAD | FILE: match_summary.csv | ROWS: 107
+2026-04-22 02:59:36,565 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 02:59:36,568 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 02:59:36,568 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 03:01:08,528 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 03:01:08,528 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 03:01:08,528 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 03:01:08,529 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 03:01:08,608 - INFO - Extraction complete
+2026-04-22 03:01:08,608 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 03:01:08,608 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 03:01:08,608 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 102
+2026-04-22 03:01:08,609 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 0
+2026-04-22 03:01:08,609 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 102
+2026-04-22 03:01:08,704 - INFO - Transformation complete
+2026-04-22 03:01:09,661 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 03:01:09,661 - INFO - TRANSFORM | STATS | Players: 254 | Teams: 9 | Match Summaries: 102
+2026-04-22 03:01:09,663 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 102 matches, 52713 deliveries
+2026-04-22 03:01:09,663 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 03:01:09,720 - INFO - LOAD | FILE: matches.csv | ROWS: 102
+2026-04-22 03:01:09,793 - INFO - LOAD | FILE: deliveries.csv | ROWS: 52713
+2026-04-22 03:01:09,795 - INFO - LOAD | FILE: player_stats.csv | ROWS: 254
+2026-04-22 03:01:09,797 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 03:01:09,798 - INFO - LOAD | FILE: match_summary.csv | ROWS: 102
+2026-04-22 03:01:09,798 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 03:01:09,801 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 03:01:09,801 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 03:09:42,339 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 03:09:42,339 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 03:09:42,339 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 03:09:42,340 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 03:09:42,425 - INFO - Extraction complete
+2026-04-22 03:09:42,426 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 03:09:42,426 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 03:09:42,426 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 0
+2026-04-22 03:09:42,426 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 0
+2026-04-22 03:09:42,426 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 0
+2026-04-22 03:09:42,426 - INFO - Transformation complete
+2026-04-22 03:13:35,921 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 03:13:35,922 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 03:13:35,922 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 03:13:35,922 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 03:13:36,001 - INFO - Extraction complete
+2026-04-22 03:13:36,001 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 03:13:36,001 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 03:13:36,002 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 97
+2026-04-22 03:13:36,002 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 0
+2026-04-22 03:13:36,002 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 97
+2026-04-22 03:13:36,100 - INFO - Transformation complete
+2026-04-22 03:13:37,005 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 03:13:37,005 - INFO - TRANSFORM | STATS | Players: 253 | Teams: 9 | Match Summaries: 97
+2026-04-22 03:13:37,008 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 97 matches, 50296 deliveries
+2026-04-22 03:13:37,008 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 03:13:37,071 - INFO - LOAD | FILE: matches.csv | ROWS: 97
+2026-04-22 03:13:37,136 - INFO - LOAD | FILE: deliveries.csv | ROWS: 50296
+2026-04-22 03:13:37,138 - INFO - LOAD | FILE: player_stats.csv | ROWS: 253
+2026-04-22 03:13:37,139 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 03:13:37,141 - INFO - LOAD | FILE: match_summary.csv | ROWS: 97
+2026-04-22 03:13:37,141 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 03:13:37,143 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 03:13:37,143 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 03:14:32,271 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 03:14:32,271 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 03:14:32,271 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 03:14:32,271 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 03:14:32,348 - INFO - Extraction complete
+2026-04-22 03:14:32,348 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 03:14:32,348 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 03:14:32,349 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 97
+2026-04-22 03:14:32,349 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 0
+2026-04-22 03:14:32,349 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 97
+2026-04-22 03:14:32,444 - INFO - Transformation complete
+2026-04-22 03:14:33,320 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 03:14:33,321 - INFO - TRANSFORM | STATS | Players: 253 | Teams: 9 | Match Summaries: 97
+2026-04-22 03:14:33,323 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 97 matches, 50296 deliveries
+2026-04-22 03:14:33,323 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 03:14:33,382 - INFO - LOAD | FILE: matches.csv | ROWS: 97
+2026-04-22 03:14:33,448 - INFO - LOAD | FILE: deliveries.csv | ROWS: 50296
+2026-04-22 03:14:33,449 - INFO - LOAD | FILE: player_stats.csv | ROWS: 253
+2026-04-22 03:14:33,450 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 03:14:33,451 - INFO - LOAD | FILE: match_summary.csv | ROWS: 97
+2026-04-22 03:14:33,451 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 03:14:33,454 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 03:14:33,454 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 03:28:45,724 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 03:28:45,728 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 03:28:45,728 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 03:28:45,728 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 03:28:45,881 - INFO - Extraction complete
+2026-04-22 03:28:45,881 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 03:28:45,881 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 03:28:45,883 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 97
+2026-04-22 03:28:45,883 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 1
+2026-04-22 03:28:45,883 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 98
+2026-04-22 03:28:46,011 - INFO - Transformation complete
+2026-04-22 03:28:47,397 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 03:28:47,397 - INFO - TRANSFORM | STATS | Players: 253 | Teams: 9 | Match Summaries: 98
+2026-04-22 03:28:47,400 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 98 matches, 50717 deliveries
+2026-04-22 03:28:47,400 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 03:28:47,477 - INFO - LOAD | FILE: matches.csv | ROWS: 98
+2026-04-22 03:28:47,563 - INFO - LOAD | FILE: deliveries.csv | ROWS: 50717
+2026-04-22 03:28:47,565 - INFO - LOAD | FILE: player_stats.csv | ROWS: 253
+2026-04-22 03:28:47,567 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 03:28:47,568 - INFO - LOAD | FILE: match_summary.csv | ROWS: 98
+2026-04-22 03:28:47,568 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 03:28:47,575 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 03:28:47,576 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 09:20:05,601 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 09:20:05,603 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 09:20:05,604 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 09:20:05,605 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 09:20:06,192 - INFO - Extraction complete
+2026-04-22 09:20:06,193 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 09:20:06,193 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 09:20:06,207 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 97
+2026-04-22 09:20:06,207 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 2
+2026-04-22 09:20:06,207 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 99
+2026-04-22 09:20:07,215 - INFO - Transformation complete
+2026-04-22 09:20:16,013 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 09:20:16,013 - INFO - TRANSFORM | STATS | Players: 253 | Teams: 9 | Match Summaries: 99
+2026-04-22 09:20:16,032 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 99 matches, 50942 deliveries
+2026-04-22 09:20:16,033 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 09:20:16,439 - INFO - LOAD | FILE: matches.csv | ROWS: 99
+2026-04-22 09:20:16,846 - INFO - LOAD | FILE: deliveries.csv | ROWS: 50942
+2026-04-22 09:20:16,858 - INFO - LOAD | FILE: player_stats.csv | ROWS: 253
+2026-04-22 09:20:16,870 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 09:20:16,881 - INFO - LOAD | FILE: match_summary.csv | ROWS: 99
+2026-04-22 09:20:16,882 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 09:20:16,898 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 09:20:16,899 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully
+2026-04-22 09:21:26,653 - INFO - ETL PIPELINE | STAGE: Initialization | STATUS: Started
+2026-04-22 09:21:26,653 - INFO - ETL PIPELINE | WORKING_DIR: C:\Work\Python Project (Hetansh)\womens-icc-etl
+2026-04-22 09:21:26,654 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Started
+2026-04-22 09:21:26,654 - INFO - Extracting data/raw/icc_womens_cricket_world_cup_female_json.zip...
+2026-04-22 09:21:27,146 - INFO - Extraction complete
+2026-04-22 09:21:27,147 - INFO - ETL PIPELINE | STAGE: Extraction | STATUS: Completed
+2026-04-22 09:21:27,147 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Started
+2026-04-22 09:21:27,154 - INFO - TRANSFORM | SOURCE: Base Dataset | COUNT: 97
+2026-04-22 09:21:27,154 - INFO - TRANSFORM | SOURCE: Admin Uploads | COUNT: 3
+2026-04-22 09:21:27,155 - INFO - TRANSFORM | TOTAL_FILES_QUEUED: 100
+2026-04-22 09:21:27,903 - INFO - Transformation complete
+2026-04-22 09:21:35,296 - INFO - TRANSFORM | Derived tables successfully calculated
+2026-04-22 09:21:35,296 - INFO - TRANSFORM | STATS | Players: 253 | Teams: 9 | Match Summaries: 100
+2026-04-22 09:21:35,312 - INFO - ETL PIPELINE | STAGE: Transformation | STATUS: Completed | DATA_LOADED: 100 matches, 51514 deliveries
+2026-04-22 09:21:35,313 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Started
+2026-04-22 09:21:35,677 - INFO - LOAD | FILE: matches.csv | ROWS: 100
+2026-04-22 09:21:36,178 - INFO - LOAD | FILE: deliveries.csv | ROWS: 51514
+2026-04-22 09:21:36,193 - INFO - LOAD | FILE: player_stats.csv | ROWS: 253
+2026-04-22 09:21:36,201 - INFO - LOAD | FILE: team_stats.csv | ROWS: 9
+2026-04-22 09:21:36,216 - INFO - LOAD | FILE: match_summary.csv | ROWS: 100
+2026-04-22 09:21:36,216 - INFO - LOAD | STATUS: Success | PATH: data/processed
+2026-04-22 09:21:36,239 - INFO - ETL PIPELINE | STAGE: Loading | STATUS: Completed
+2026-04-22 09:21:36,240 - INFO - ETL PIPELINE | STATUS: Success | SUMMARY: Pipeline execution finished successfully

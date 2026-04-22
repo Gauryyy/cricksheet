@@ -1,0 +1,21 @@
+# Environment files
+.env
+*.env
+
+# Config files containing secrets
+config/*.json
+config/*.yaml
+
+# Credentials
+*.key
+*.pem
+*.crt
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc

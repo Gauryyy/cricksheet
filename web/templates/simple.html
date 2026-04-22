@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Analytics Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        
+        .container { display: flex; min-height: 100vh; }
+        
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+        
+        .sidebar h1 { font-size: 24px; margin-bottom: 5px; }
+        .sidebar p { font-size: 12px; opacity: 0.7; margin-bottom: 30px; }
+        
+        .nav-section {
+            margin-bottom: 20px;
+        }
+        
+        .nav-section a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-section a:hover { background: rgba(255,255,255,0.1); }
+        
+        .filters {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        
+        .filters h3 { font-size: 14px; margin-bottom: 10px; }
+        
+        .filter-group {
+            margin-bottom: 12px;
+        }
+        
+        .filter-group label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+        
+        .filter-group select {
+            width: 100%;
+            padding: 6px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .filter-group select option {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .btn:hover { background: #2980b9; }
+        
+        .main {
+            margin-left: 280px;
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .kpi-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+        
+        .kpi-label { font-size: 12px; color: #666; margin-bottom: 5px; }
+        .kpi-value { font-size: 28px; font-weight: bold; color: #2c3e50; }
+        
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .results h3 { margin-bottom: 15px; color: #2c3e50; }
+        
+        canvas { max-width: 100%; margin-bottom: 20px; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        table th {
+            background: #f5f5f5;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover { background: #f9f9f9; }
+        
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h1>Precision Pitch</h1>
+            <p>Cricket Analytics</p>
+            
+            <div class="nav-section">
+                <a href="#">📊 Dashboard</a>
+                <a href="#">👥 Players</a>
+                <a href="#">🏟️ Teams</a>
+            </div>
+            
+            <div class="filters">
+                <h3>Player Analysis</h3>
+                <div class="filter-group">
+                    <label>Select Player</label>
+                    <select id="playerSelect"></select>
+                </div>
+                <div class="filter-group">
+                    <label>Opponent (Optional)</label>
+                    <select id="opponentSelect"></select>
+                </div>
+                <button class="btn" onclick="getPlayerStats()">Get Stats</button>
+                
+                <hr style="margin: 15px 0; opacity: 0.2;">
+                <h3 style="margin-top: 15px;">Team Analysis</h3>
+                
+                <div class="filter-group">
+                    <label>Select Team</label>
+                    <select id="teamSelect"></select>
+                </div>
+                <button class="btn" onclick="getTeamStats()">Get Team Stats</button>
+                
+                <hr style="margin: 15px 0; opacity: 0.2;">
+                <h3 style="margin-top: 15px;">Head-to-Head</h3>
+                
+                <div class="filter-group">
+                    <label>Team 1</label>
+                    <select id="team1Select"></select>
+                </div>
+                <div class="filter-group">
+                    <label>Team 2</label>
+                    <select id="team2Select"></select>
+                </div>
+                <button class="btn" onclick="getTeamVsTeam()">Compare</button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main">
+            <div class="header">
+                <h2>Cricket Analytics Dashboard</h2>
+                <p style="color: #666; font-size: 14px; margin-top: 5px;">Women's ICC Cricket World Cup Data</p>
+            </div>
+            
+            <!-- KPI Cards -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Matches</div>
+                    <div class="kpi-value" id="totalMatches">-</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Teams</div>
+                    <div class="kpi-value" id="totalTeams">-</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Players</div>
+                    <div class="kpi-value" id="totalPlayers">-</div>
+                </div>
+                <div class="kpi-card" style="border-left-color: #e74c3c;">
+                    <div class="kpi-label">Total Runs</div>
+                    <div class="kpi-value" id="totalRuns">-</div>
+                </div>
+            </div>
+            
+            <!-- Results -->
+            <div id="playerStats" class="results"></div>
+            <div id="teamStatsResult" class="results"></div>
+            <div id="teamVsTeamResult" class="results"></div>
+        </main>
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPlayers();
+            loadTeams();
+            loadKPIs();
+        });
+        
+        function loadKPIs() {
+            fetch('/api/teams')
+                .then(r => r.json())
+                .then(teams => {
+                    document.getElementById('totalTeams').textContent = teams.length;
+                });
+            
+            fetch('/api/players')
+                .then(r => r.json())
+                .then(players => {
+                    document.getElementById('totalPlayers').textContent = players.length;
+                });
+        }
+    </script>
+</body>
+</html>
